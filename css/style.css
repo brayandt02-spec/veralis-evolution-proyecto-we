@@ -12,7 +12,7 @@ html{
 /*header*/
 header {
     backdrop-filter:blur(12px); 
-    background: rgb(0, 0, 0);
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #6d28d9);
     z-index:9999;
     padding: 0;
 }
@@ -31,10 +31,11 @@ nav {
 #logo {
     width: 58px;
     height: auto;
-    transform: scale(1.6);
+    transform: scale(2.0);
+        mix-blend-mode: screen;
 }
 #logo:hover{
-    transform: scale(1.8);
+    transform: scale(1.);
 }
 .nav-links {
     display:flex;
@@ -43,7 +44,7 @@ nav {
     transition: all 0.3s ease;
 }
 .nav-links a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease ;
@@ -52,13 +53,13 @@ nav {
 .nav-links a:hover {
     opacity: 0.7;
     transform: translateY(-2px);
-    color:#2563eb;
+    color: #c4b5fd;
 }
 .menu-btn {
     display:none;
     background:none;
     border:none;
-    color:#ffffff;
+    color: white;
     font-size:1.5rem;
     cursor:pointer; 
 }
@@ -67,14 +68,17 @@ nav {
     display:block;
  }
   .nav-links{
-    position:fixed;
-    top:60%;
+    position: fixed;
+        top: 60px;
     left: 0;
-    width:100%;
-    background-color: rgb(2, 2, 2);
+    width: 100%;
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(15px);
     flex-direction: column;
+    padding: 20px 0;
     clip-path: circle(0px at 90% -10%);
     pointer-events: none;
+    transition: clip-path 0.4s ease-in-out;
   }
   .nav-links.active{
     clip-path: circle(1000px at 90% -10%);
@@ -100,7 +104,7 @@ nav {
 body {
     margin: 0px ;
     padding: 0;
-    background-color: #000000;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #6d28d9);
 }
 /* HERO  */
 
@@ -158,7 +162,7 @@ body {
     padding: 14px 28px;
     border-radius: 10px;
     border: 1px solid #3b82f6;
-    background: rgba(59,130,246,.15);
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
     transition: .3s;
 }
 
@@ -197,4 +201,50 @@ footer{
     justify-content: space-between;
     align-items: center;
     padding: 18px;
+}
+#about {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Efecto cristal */
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    /* Centra el contenido de forma ordenada */
+}
+
+/* Estilo para la imagen del computador */
+#about img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    /* Suaviza los bordes para que no se vea un corte brusco */
+    margin-bottom: 30px;
+
+    /* TRUCO: Esto hace que el fondo negro oscuro de la imagen "desaparezca" y se fusione con el diseño */
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Título de la sección */
+#about h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Párrafo */
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    max-width: 800px;
+    margin: 0 auto;
 }
